@@ -10,41 +10,44 @@
 <body>
     <div id="app">
         <div class="background">
-            <h1>test</h1>
-            <button v-on:click="reverseMessage">Bridge</button>
+            <button v-on:click="test" class="button">Bridge</button>
+            <div class="stargate">
+            </script>
+            </div>
         </div>
-        <stargate-widget theme="dark" />
-        <script
-            src="https://unpkg.com/@layerzerolabs/stargate-ui@latest/element.js"
-            defer
-            async>
-        </script>
     </div>
+    <stargate-widget theme="dark" id="stargate"/>
+    <script src="https://unpkg.com/@layerzerolabs/stargate-ui@latest/element.js"></script>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                message: 'Bridge'
+                message: 'Hello Vue!'
             },
-            methods: {
-                reverseMessage: function () {
-                    // this.message = this.message.split('').reverse().join('');
-                    // const stargate = document.getElementById('stargate');
-                    // if(stargate.style.display == "block"){
-                    //     stargate.style.display = "none";
-                    // }else{
-                    //     stargate.style.display = "block";
-                    // }
+            methods:{
+                test: function(){
+                    console.log("Bridge");
+                    const foo = document.getElementById("stargate")
+                    if(foo.style.display == "none"){
+                        foo.style.display = "block";
+                    }else{
+                        foo.style.display = "none";
+                    }
+                    //foo.style.width = "30%";
                 }
             },
             mounted: function(){
-                // const stargate = document.getElementById('stargate');
-                // stargate.style.display = "block";
-                // stargate.style.display = "block";
-                // stargate.style.width = "30%";
-                // console.log("test");
+                console.log("mounted");
+                const foo = document.getElementById("stargate");
+                foo.style.display = "block";
+                foo.style.width = "30%";
+                foo.style.position = "absolute";
+                foo.style.top = "400px";
+                foo.style.left = "650px";
+                foo.style.display = "none";
+                
             }
-        });
+        })
     </script>
 </body>
 </html>
@@ -55,7 +58,7 @@
         width: 100vw;
         height: 100vh;
     }
-    .back {
+    .background {
         display: block;
         background-image: url("./images/metamask.png");
         background-repeat: no-repeat;
@@ -63,7 +66,7 @@
         width: 1903px;
         padding-top: 952px;
     }
-    button{
+    .button{
         position: absolute;
         top: 357px;
         left: 1080px;
@@ -71,12 +74,12 @@
         color: white;
         background: blue;
     }
-    /* .stargate{
-        display: block;
+    .stargate{
+        display: none;
         position: absolute;
         top: 400px;
         left: 700px;
         font-weight: 800;
-    } */
+    }
 </style>
 
