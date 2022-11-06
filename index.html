@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>CATchy</title>
+</head>
+<body>
+    <div id="app">
+        <div class="background">
+            <h1>test</h1>
+            <button v-on:click="reverseMessage">Bridge</button>
+        </div>
+        <stargate-widget theme="dark" />
+        <script
+            src="https://unpkg.com/@layerzerolabs/stargate-ui@latest/element.js"
+            defer
+            async>
+        </script>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Bridge'
+            },
+            methods: {
+                reverseMessage: function () {
+                    // this.message = this.message.split('').reverse().join('');
+                    // const stargate = document.getElementById('stargate');
+                    // if(stargate.style.display == "block"){
+                    //     stargate.style.display = "none";
+                    // }else{
+                    //     stargate.style.display = "block";
+                    // }
+                }
+            },
+            mounted: function(){
+                // const stargate = document.getElementById('stargate');
+                // stargate.style.display = "block";
+                // stargate.style.display = "block";
+                // stargate.style.width = "30%";
+                // console.log("test");
+            }
+        });
+    </script>
+</body>
+</html>
+<style>
+    .main {
+        position: absolute;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+    .back {
+        display: block;
+        background-image: url("./images/metamask.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 1903px;
+        padding-top: 952px;
+    }
+    button{
+        position: absolute;
+        top: 357px;
+        left: 1080px;
+        font-weight: 800;
+        color: white;
+        background: blue;
+    }
+    /* .stargate{
+        display: block;
+        position: absolute;
+        top: 400px;
+        left: 700px;
+        font-weight: 800;
+    } */
+</style>
+
